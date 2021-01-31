@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- My favicon -->
+  <link rel="icon" type="image/ico" href="resources/PantherIcon.ico" />
+  <!--Fontawesome CSS -->
+  <script src="https://kit.fontawesome.com/5bdd1c39a8.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- My CSS -->
+  <link href="styles.css" rel="stylesheet">
+  <!-- HTML-only Head Opens-->
+  <title id="tabName" >Productivity Panther</title>
+  <!-- HTML-only Head Closes -->
+</head>
+
+<body>
+  <!--HTML Body Opens-->
+  <div class="titleContainer">
+    <h1>Productivity <span id="panther">Panther</span></h1>
+    <img id = "logo" src="resources/Panther.png" alt="Productivity Panther">
+  </div>
+   <p id="seshType">Time to get to work!</p>
+  <div id="timerContainer">
+    <p id="timer" onclick="roarSound(), timerPulse()">
+      00:00
+    </p>
+
+    <p id="indicator">0/4 Sessions Completed</p>
+
+  </div>
+  <div class = "inputContainer">
+    <div class="inputDiv">
+      Work Session (min)
+      <input type="number" class = "input" id="workInput" min=0 onchange="scrollSound()" value="25">
+    </div>
+    <div class="inputDiv">
+      Short Break (min)
+      <input type="number" class="input" id="sBreakInput" min=0 onchange="scrollSound()" value="5">
+    </div>
+    <div class="inputDiv">
+      Long Break (min)
+      <input type="number" class="input" id="lBreakInput" min=0 onchange="scrollSound()" value="15">
+    </div>
+  </div>
+  <button id = "updateBtn" onclick="updateSound(), updatePulse()">
+      Update
+    </button>
+  <div class="btnsContainer">
+    <button id = "playBtn" onclick="play()">
+      <span class="fas fa-play"></span>
+      <span class="tooltip">Play</span>
+    </button>
+    <button id = "pauseBtn" onclick="clickSound(), pause()">
+      <span class="fas fa-pause"></span>
+      <span class="tooltip">Pause</span>
+    </button>
+    <button id = "stopBtn" onclick="clickSound(), stop()">
+      <span class="fas fa-stop"></span>
+      <span class="tooltip">Stop</span>
+    </button>
+    <button id = "settingsBtn" onclick="toggleSettings(), clickSound()">
+      <span class="fas fa-cog" meta="hi"></span>
+      <span class="tooltip">Settings</span>
+    </button>
+  </div>
+
+<div id="confirmation" class="modal">  <!-- Source for modal implementation: W3Schools.com-->
+
+  <div class="modal-content">
+    <p>
+      <span id = "modal-heading">Interrupt work/break session?</span>
+        <br>
+      Your progress will not be counted towards your completed sessions.
+    </p>
+    <button id = "confirmStop" onclick="clickSound(), confirmStop()">
+      Yes
+    </button>
+    <button id = "closeModal" onclick="clickSound(), closeConfirmation()">
+      No
+    </button>
+  </div>
+
+</div>
+  <!--HTML Body Closes-->
+  <!-- Optional JavaScript Opens -->
+  <script type="text/javascript" src="main.js">
+  </script>
+  <!-- Optional JavaScript Closes -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+<footer class="footer">
+  <!--HTML Footer Opens-->
+  <!--HTML Footer Closes-->
+</footer>
+
+</html>
